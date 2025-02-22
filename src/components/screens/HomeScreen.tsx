@@ -37,6 +37,7 @@ export const HomeScreen: React.FC<RootStackScreenProps<'Home'>> = observer(
         <Image
           source={require('../../assets/images/story/story_bg_1.png')}
           className="absolute w-full h-full opacity-80"
+          resizeMode="stretch"
         />
 
         <View className="my-auto pt-8">

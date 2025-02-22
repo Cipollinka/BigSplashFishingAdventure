@@ -32,6 +32,7 @@ export default observer(function FishingStoreScreen() {
       <Image
         source={require('@assets/images/store.png')}
         className="absolute w-full h-full opacity-60"
+        resizeMode="stretch"
       />
       <View className="m-4">
         <View className="flex-row justify-between z-10 items-center mb-6">

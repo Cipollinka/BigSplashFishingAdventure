@@ -203,6 +203,7 @@ const FishingGameScreen = () => {
       <Image
         source={require('../../assets/images/story/story_bg_1.png')}
         style={styles.backgroundImage}
+        resizeMode="stretch"
       />
 
       <Animated.View

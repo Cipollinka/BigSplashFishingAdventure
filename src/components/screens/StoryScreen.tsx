@@ -85,7 +85,7 @@ export const StoryScreen = observer(() => {
           className={clsx('absolute w-full h-full', {
             'opacity-60': isReward,
           })}
-          resizeMode="cover"
+          resizeMode="stretch"
         />
 
         <View

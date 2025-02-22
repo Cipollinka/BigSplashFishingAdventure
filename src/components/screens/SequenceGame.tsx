@@ -91,6 +91,7 @@ export const SequenceGameScreen: React.FC = () => {
   const [selectedItems, setSelectedItems] = useState<GridItemType[]>([]);
   const pan = useRef(new Animated.ValueXY()).current;
   const [draggedItem, setDraggedItem] = useState<GridItemType | null>(null);
+  const [isGameFinished, setIsGameFinished] = useState(false);
   const arrangementAreaYRef = useRef<number>(20);
   const draggedItemRef = useRef<GridItemType | null>(null);
 
@@ -151,6 +152,7 @@ export const SequenceGameScreen: React.FC = () => {
   }, []);
 
   const initializeGame = () => {
+    setIsGameFinished(false);
     const items: GridItemType[] = [];
     const sequences = [1, 2, 3] as const;
     const usedSequences = new Set();
@@ -244,7 +246,7 @@ export const SequenceGameScreen: React.FC = () => {
     return (
       <Animated.View
         style={[{transform: [{scale: gridScale}]}]}
-        className="flex-row flex-wrap justify-center items-center gap-4 max-w-[400px]">
+        className="flex-row flex-wrap justify-center items-center gap-4 grid-rows-3 grid-cols-3 max-w-[350px] mx-auto mt-4">
         {gridItems.map(item => (
           <Pressable
             key={item.id}
@@ -308,14 +310,15 @@ export const SequenceGameScreen: React.FC = () => {
     store.story.goToScene('researcher_5');
 
     if (isStoryFinished) {
-      navigation.navigate('Home');
+      navigation.replace('Home');
     } else {
-      navigation.navigate('Story');
+      navigation.replace('Story');
     }
   };
 
   const handleModalClose = () => {
     setIsEndModalVisible(false);
+    setIsGameFinished(true);
   };
   const handleTryAgain = () => {
     setAttempts(0);
@@ -329,6 +332,7 @@ export const SequenceGameScreen: React.FC = () => {
     navigation.replace('Home');
   };
   const onTimerEnd = () => {
+    if (isGameFinished) return;
     setIsEndModalVisible(true);
   };
 
@@ -345,6 +349,7 @@ export const SequenceGameScreen: React.FC = () => {
       <Image
         source={require('../../assets/images/story/start_bg_3.png')}
         className="absolute w-full h-full opacity-75"
+        resizeMode="stretch"
       />
       <View className="flex-row m-4 items-center justify-between">
         <StoryBalance balance={store.balance.coins} />

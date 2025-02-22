@@ -297,7 +297,7 @@ export default function SailGameScreen() {
           {bgImage && (
             <SkiaImage
               image={bgImage}
-              fit="cover"
+              fit="fill"
               x={0}
               y={0}
               width={SCREEN_WIDTH}

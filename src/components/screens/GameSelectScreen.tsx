@@ -13,6 +13,7 @@ export default function GameSelectScreen() {
       <Image
         source={require('../../assets/images/story/story_bg_1.png')}
         className="absolute w-full h-full opacity-80"
+        resizeMode="stretch"
       />
 
       <View className="flex-row m-4 items-center justify-between">
