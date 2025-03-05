@@ -1,5 +1,5 @@
 export default class Params {
-  static keyPush = '6a93f3e1-d7ec-4c99-a8f3-2046f57890f9'; // ключ OneSignal
+  static keyPush = '17e204f0-2e4f-4683-a3aa-32f01a5dc108'; // ключ OneSignal
   static appID = 'id6742244200'; // ID додатку в сторі
   static keyApps = 'T9h7tLijQjDdZXpvgxh44L'; // ключ Appsflyer
   static targetDate = '2025-02-28'; // дата закінчення відльожки
