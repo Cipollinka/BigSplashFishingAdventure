@@ -35,7 +35,7 @@ export const HomeScreen: React.FC<RootStackScreenProps<'Home'>> = observer(
     return (
       <SafeAreaView className="flex-1 items-center bg-black">
         <Image
-          source={require('../../assets/images/story/story_bg_1.png')}
+          source={require('../../assets/images/store.png')}
           className="absolute w-full h-full opacity-80"
           resizeMode="stretch"
         />
